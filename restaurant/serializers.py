@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from .models import Menu, Booking
+from .models import MenuItem, Booking
 
 # Serializer for Menu model -- convert model instance into JSON
 class MenuSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Menu
+        model = MenuItem
         fields = '__all__'
 
 # Serializer for Booking model -- convert model instance into JSON
