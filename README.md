@@ -94,7 +94,8 @@ The API supports the following endpoints for managing menu items and table booki
    - Order booking
 
 **2. Design & Architecture**  
- **High-Level System Architecture**
+ **High-Level System Architecture**  
+
  ![System Architecture](./assets/architecture-diagram.png)
  AsgardCuisines utilizes a decoupled architecture to ensure independent scalability of the data and application layers
  - Frontend: Interacts with the backend via RESTful endpoints.
@@ -103,7 +104,8 @@ The API supports the following endpoints for managing menu items and table booki
  - Communication: The Client interacts with the Django application via stateless HTTPS requests, exchanging data in JSON format to ensure compatibility with modern frontend frameworks.
  - Abstraction: The Django ORM is utilized to abstract complex MySQL queries into Pythonic code, ensuring rapid development without sacrificing the data integrity of a relational database.
 
- **Database Schema (ERD)**
+ **Database Schema (ERD)**  
+ 
  ![AsgardCuisines ERD](./assets/database-erd.png)
    - Key Entities: MenuItem, Booking.
 
