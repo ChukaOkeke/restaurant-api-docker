@@ -134,6 +134,8 @@ The API supports the following endpoints for managing menu items and table booki
  ```bash
  bandit -c pyproject.toml -r .
  ```
+Bandit results:  
+![Bandit results](./assets/bandit-result.png)
 
  - Protection Against SQL Injection:  
    Django ORM: We avoid writing raw SQL queries. By using Django's Object-Relational Mapper (ORM), all input is automatically parameterized.  
