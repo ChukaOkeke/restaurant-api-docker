@@ -1,5 +1,5 @@
 **Restaurant Management API (AsgardCuisines)**  
-A secure, containerized RESTful API for modern restaurant management, built with Django, MySQL, and Docker.
+A secure, containerized RESTful API for modern restaurant management, built with Django, MySQL, and Docker. This is version 1 of a continuously evolving cloud-native system. 
 
 **Installation & Setup**  
 Follow these steps to get the AsgardCuisines API running using Docker.
