@@ -35,7 +35,7 @@ cp .env.example .env
  Pull the official MySQL and custom API images and start the system in the background. 
 
  ```bash
- docker-compose up -d
+ docker compose up -d
  ```
 
   Note: On the first run, the database initialization on WSL2 may take 3-5 minutes. The API service is configured to wait until the database is officially healthy before starting.  
@@ -45,14 +45,7 @@ cp .env.example .env
  docker compose restart web
  ```
 
- 5. Apply Database Migrations  
- Once the containers are running and healthy, create the necessary database tables:
-
- ```bash
- docker compose exec web python manage.py migrate
- ```
-
- 6. Access the Application  
+ 5. Access the Application  
  The API will be available at http://127.0.0.1:8000/ or http://localhost:8000/.
 
 **API Endpoints**  
@@ -62,6 +55,7 @@ The API supports the following endpoints for managing menu items and table booki
 
 | **Method** | **Endpoint** | **Description** | **Authentication** |
 | :--- | :--- | :--- | :--- |
+| `GET` | `/api/` | Home Page | Public |
 | `GET` | `/api/menu-items/` | List all menu items | Public |
 | `POST` | `/api/menu-items/` | Create a new menu item | Admin Only |
 | `GET` | `/api/menu-items/<id>/` | Get details of a specific item | Public |
@@ -174,13 +168,13 @@ Bandit results:
  Run Audit:
 
  ```bash
- pip install -r requirements-dev.txt && trivy image chukaokeke/restaurant-api:v2
+ pip install -r requirements-dev.txt && trivy image chukaokeke/restaurant-api:v3
  ```
 
 Run audit for available patches:
 
  ```bash
- trivy image --ignore-unfixed chukaokeke/restaurant-api:v2
+ trivy image --ignore-unfixed chukaokeke/restaurant-api:v3
  ```
 
 Trivy results:  

@@ -10,10 +10,11 @@ WORKDIR /app
 
 # Install system dependencies required for mysqlclient and patch vulnerabilities identified by Trivy (CVE-2025-13699 for mariadb)
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    gcc \
     default-libmysqlclient-dev \
-    pkg-config \
-    mariadb-common \    
+    gcc \
+    mariadb-common \
+    netcat-openbsd \
+    pkg-config \  
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -30,5 +31,8 @@ COPY . .
 # Expose Django's default port
 EXPOSE 8000
 
-# Start the Django development server
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+# Explicitly set executable permissions for the entrypoint
+RUN chmod +x /app/entrypoint.sh
+
+# Run database migrations and start the Django development server from the shell script
+ENTRYPOINT ["/app/entrypoint.sh"]
