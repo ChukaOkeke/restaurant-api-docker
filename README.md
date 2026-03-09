@@ -186,6 +186,5 @@ I used Docker/Docker Compose for the multi-environment containerization (Django 
  - API Tools: **Insomnia**
 
 **Deep Dive & Demo**  
-This repository focuses on implementation, containerization, and local orchestration of the Restaurant Management API using Docker and Docker Compose.  
-A detailed breakdown of the architectural decisions, design trade-offs, security boundaries, and lessons learned during the containerization process is documented here on [Designing a Secure Dockerized Restaurant Management API](https://medium.com/@chukaokeke/designing-a-secure-dockerized-restaurant-management-api-e3cadebf9635).
+This repository focuses on implementation, containerization, and local orchestration of the Restaurant Management API using Docker and Docker Compose. A detailed breakdown of the architectural decisions, design trade-offs, security boundaries, and lessons learned during the containerization process is documented here on [Designing a Secure Dockerized Restaurant Management API](https://medium.com/@chukaokeke/designing-a-secure-dockerized-restaurant-management-api-e3cadebf9635).  
 A demo can be found here on [Django & Docker Compose demo](https://youtu.be/SCioCyQNbjc)
