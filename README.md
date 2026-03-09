@@ -2,7 +2,7 @@
 A secure, containerized RESTful API for modern restaurant management, built with Django, MySQL, and Docker. This is version 1 of a continuously evolving cloud-native system. 
 
 **Project Scope**  
-This project focuses on secure containerization and local orchestration using Docker Compose. Cloud-native services (EKS, IAM, Secrets Manager) are explored in later iterations.
+This project focuses on secure containerization and local orchestration using Docker Compose. Cloud-native services (EKS, IAM, Secrets Manager, etc) are explored in later iterations.
 
 **Installation & Setup**  
 Follow these steps to get the AsgardCuisines API running using Docker.
@@ -38,12 +38,7 @@ cp .env.example .env
  docker compose up -d
  ```
 
-  Note: On the first run, the database initialization on WSL2 may take 3-5 minutes. The API service is configured to wait until the database is officially healthy before starting.  
-  If the API service does not start alongside the database service, run:
- 
- ```bash
- docker compose restart web
- ```
+  Note: On the first run, the database initialization on WSL2 may take 3-5 minutes. The API service is configured to wait until the database is healthy before starting.  
 
  5. Access the Application  
  The API will be available at http://127.0.0.1:8000/ or http://localhost:8000/.
@@ -109,12 +104,12 @@ AsgardCuisines utilizes a decoupled architecture to ensure independent scalabili
  - Requests are validated at the API layer using schema validation and authentication tokens.
  - Only authenticated requests are allowed to access protected endpoints.
 
-**Trust Boundary 2: API Service -> Database**
+**Trust Boundary 2: API Service -> Database**  
 - The database is not exposed to the public network.
 - The API is the only trusted component allowed to communicate with the database.
 - Database credentials are injected via environment variables and not hardcoded.
 
-**Trust Boundary 3: Docker Network (Inter-service Communication)**
+**Trust Boundary 3: Docker Network (Inter-service Communication)**  
 - Services communicate over an isolated Docker bridge network.
 - No service is directly exposed unless explicitly mapped via ports.
 - Internal service names are used instead of IP addresses.
@@ -125,7 +120,7 @@ AsgardCuisines utilizes a decoupled architecture to ensure independent scalabili
 - Access to secrets is limited to the application container.
 
 
-**3. Key Design Decisions & Trade-offs**
+**3. Key Design Decisions & Trade-offs**  
 - Chose Django for its robustness and security as a python-based web framework
 - Chose MySQL for its ACID compliance, ensuring that order transactions are never lost or duplicated.
 - Chose Docker Compose over Kubernetes for local dev to reduce operational overhead.
@@ -181,16 +176,16 @@ Trivy results:
 ![Bandit results](./assets/trivy-result.png)
 
 **7. Containerization**  
-Docker/Docker Compose was used for the multi-environment containerization (Django API in one container, MySQL database in another) and local  orchestration.
+I used Docker/Docker Compose for the multi-environment containerization (Django API in one container, MySQL database in another) and local orchestration.
 
-**Tech Stack**
+**Tech Stack**  
  - Backend: **Python / Django**
  - Database: **MySQL** 
  - Containerization: **Docker / Docker Compose**
  - Security: **Bandit / JWT / Trivy**
  - API Tools: **Insomnia**
 
-**Deep Dive**  
+**Deep Dive & Demo**  
 This repository focuses on implementation, containerization, and local orchestration of the Restaurant Management API using Docker and Docker Compose.  
-A detailed breakdown of the architectural decisions, design trade-offs, security boundaries, and lessons learned during the containerization process is documented here on [Designing a Secure Dockerized Restaurant Management API](https://medium.com/@chukaokeke/designing-a-secure-dockerized-restaurant-management-api-e3cadebf9635)
-
+A detailed breakdown of the architectural decisions, design trade-offs, security boundaries, and lessons learned during the containerization process is documented here on [Designing a Secure Dockerized Restaurant Management API](https://medium.com/@chukaokeke/designing-a-secure-dockerized-restaurant-management-api-e3cadebf9635).
+A demo can be found here on [Django & Docker Compose demo](https://youtu.be/SCioCyQNbjc)
