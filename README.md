@@ -178,6 +178,9 @@ Trivy results:
 **7. Containerization**  
 I used Docker/Docker Compose for the multi-environment containerization (Django API in one container, MySQL database in another) and local orchestration.
 
+Docker Compose orchestration:  
+![Docker Compose](./assets/docker-compose.png)
+
 **Tech Stack**  
  - Backend: **Python / Django**
  - Database: **MySQL** 
