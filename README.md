@@ -72,7 +72,7 @@ The API supports the following endpoints for managing menu items and table booki
  - Cost-efficient local development
  - Secure handling of secrets
  - Container portability
- - Clear seperation of services  
+ - Clear separation of services  
 
 
 **2. Architecture Overview**  
