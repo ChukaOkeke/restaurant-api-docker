@@ -68,7 +68,7 @@ The API supports the following endpoints for managing menu items and table booki
  **Problem Statement**  
  The goal was to design a secure, scalable backend API for restaurant bookings and menu management that could evolve from Docker Compose to Kubernetes and later to cloud-native services.  
 
- **Constraints**  
+ **Key Features & Constraints**  
  - Cost-efficient local development
  - Secure handling of secrets
  - Container portability
