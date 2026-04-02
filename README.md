@@ -144,7 +144,7 @@ AsgardCuisines utilizes a decoupled architecture to ensure independent scalabili
 
 **6. Security**  
  Security was integrated into the development pipeline at several layers rather than added as an afterthought to protect against common web vulnerabilities:
- - Used **JWT (JSON Web Tokens)** for user authentication and authorization.
+ - Used **Token Authentication** for user authentication and authorization.
  - Used Bandit for **Static Application Security Testing (SAST)**.    
  Run Audit:
 
@@ -154,7 +154,7 @@ AsgardCuisines utilizes a decoupled architecture to ensure independent scalabili
 Bandit results:  
 ![Bandit results](./assets/bandit-result.png)
 
- - Focused on defenses against SQL injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF).
+ - Focused on defenses against Broken Access Control, SQL injection, Cross-Site Scripting (XSS), and Cross-Site Request Forgery (CSRF).
 
  - Used environment variables to handle secrets (like database credentials) instead of hardcoding.
 
@@ -185,7 +185,7 @@ Docker Compose orchestration:
  - Backend: **Python / Django**
  - Database: **MySQL** 
  - Containerization: **Docker / Docker Compose**
- - Security: **Bandit / JWT / Trivy**
+ - Security: **Bandit / Trivy**
  - API Tools: **Insomnia**
 
 **Deep Dive & Demo**  
